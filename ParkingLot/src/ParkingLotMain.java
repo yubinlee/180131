@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class ParkingLotMain {
 	private static Car[] cararr;
 	private static int carCount;
-	public static final int MAX_CAR_NUM = 900;
+	public static final int MAX_CAR_WIDTH = 30;
+	public static final int MAX_CAR_HEIGHT = 30;
 	
 	public static void initParkingLot() {
 		cararr = new Car[MAX_CAR_NUM];
@@ -24,8 +25,8 @@ public class ParkingLotMain {
 	
 	public static void showParkingLot() {
 		System.out.println("*현재 주차장 상황*");
-		for (int i = 0; i < 30; i++){
-			for (int j = 0; j < 30; j++){
+		for (int i = 0; i < MAX_CAR_HEIGHT; i++){
+			for (int j = 0; j < MAX_CAR_WIDTH; j++){
 				System.out.print("[ ");
 				int idx = checkLocation(i, j);
 				if (idx != -1){
